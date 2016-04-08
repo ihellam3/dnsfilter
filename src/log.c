@@ -9,11 +9,11 @@
 
 #define MAX_LOG_SIZE 256
 
-int log_level = LOG_ERR;
+int log_level = LOG_INFO;
 
 static void emit_log(int level, char* line) {
     //TODO for level
-    if (log_level <= level) {
+    if (log_level >= level) {
         //uncomment to use syslog, then it will show on router's log page
         //syslog(syslog_level, "%s", line);
         fprintf(stderr, "%s", line);
@@ -31,7 +31,7 @@ static void logv(int filter, const char *format, va_list vl) {
 void loginfo(const char *format, ...) {
     va_list ap;
 
-    if (log_level <= LOG_INFO) {
+    if (log_level < LOG_INFO) {
         return;
     }
 
