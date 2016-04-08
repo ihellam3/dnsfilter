@@ -32,3 +32,6 @@ TARGET_LINK_LIBRARIES(dnsfilter m ${LIBEV_LIBRARIES} basic)
 
 ADD_EXECUTABLE(khash_test ./tests/khash_test.c)
 TARGET_LINK_LIBRARIES(khash_test m ${LIBEV_LIBRARIES} ${OPENSSL_INCLUDE_DIRS} basic)
+
+ADD_EXECUTABLE(bloom_test ./tests/bloom.c)
+TARGET_LINK_LIBRARIES(bloom_test m ${LIBEV_LIBRARIES} ${OPENSSL_INCLUDE_DIRS} basic)
